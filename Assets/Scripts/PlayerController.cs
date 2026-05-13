@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class PlayerController : MonoBehaviour
 {
@@ -23,11 +24,4 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter(Collision col)
-    {
-        if(col.gameObject.CompareTag("Caja"))
-        {
-            Destroy(gameObject);
-        }
-    }
 }

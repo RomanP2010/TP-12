@@ -6,8 +6,17 @@ public class CajaCollision : MonoBehaviour
 {
     void OnCollisionEnter(Collision col)
     {
-        if(col.gameObject.CompareTag("Caja")){
-            col.gameObject.GetComponent<CajaSpawner>().LocateBoxAtRandomPosition();
+        if(col.gameObject.CompareTag("Caja"))
+        {
+            // aumenta velocidad
+            CajaMovement cajaMovement = col.gameObject.GetComponent<CajaMovement>();
+
+            cajaMovement.speed += 0.05f;
+
+            // reubica la caja
+            CajaSpawner cajaSpawner = col.gameObject.GetComponent<CajaSpawner>();
+
+            cajaSpawner.LocateBoxAtRandomPosition();
         }
     }
 }
